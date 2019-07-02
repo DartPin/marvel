@@ -1,5 +1,5 @@
 <template>
-  <div class="foot">
+  <div class="foot-mob">
       <a href="https://github.com/DartPin/marvel"><img src="src\assets\github.png" class="git-img" alt=""></a>
       <p>© Copyright 2018. Lyulkov A.A.</p><p> All rights reserved</p>
 
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-    .foot{
+    .foot-mob{
         position: absolute;
         bottom: 0;
         width: 100%;

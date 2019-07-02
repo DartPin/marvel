@@ -26,69 +26,10 @@
   </div>
 </template>
 
-<script>
-import axios from "axios";
+<script src="./js/comicsInfo.js">
 
-export default {
-  name: "MobComicsInfo",
-  components: {},
-  data() {
-    return {
-      comicsInfo: null,
-      comicsId: "",
-      comics: []
-    };
-  },
-  created() {
-    this.comicsId = this.$route.params.id;
-  },
-  mounted() {
-    this.getComicsInfo();
-  },
-  methods: {
-    getComicsInfo() {
-      if (Number(this.comicsId) < 100) {
-        axios
-          .get(
-            "src\\data\\comics.json"
-          )
-          .then(result => {
-            this.comicsInfo = result.data[Number(this.comicsId-1)];
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else {
-        axios
-          .get(
-            "http://gateway.marvel.com/v1/public/comics/" +
-              this.comicsId +
-              "?apikey=48730a361438aceeaa56fe5dcdadc0ee"
-          )
-          .then(result => {
-            this.comicsInfo = result.data.data.results[0];
-            console.log(this.comicsInfo);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }
-    }
-  }
-};
 </script>
 
-<style>
-.MobComicsInfo {
-  width: 100%;
-  height: 100%;
-  background: yellow;
-  padding: 50px 10px 0 10px;
-  overflow-y: auto;
-  text-align: justify;
-}
-.MobComicsInfo__imd-block {
-  width: 100%;
-  text-align: center;
-}
+<style src="./css/comicsInfo.css">
+
 </style>
