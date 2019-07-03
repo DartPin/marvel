@@ -9,17 +9,30 @@
             alt
             class="comics__name__img"
           />
+          more information:
+          <h6
+              class="comics__heroes on"
+              v-for="el of comicsInfo.urls"
+              :key="el"              
+            >
+            <a :href="el.url"
+                
+              >{{el.type}}</a>
+            
+            </h6>
         </div>
         <div class="comics__col col-7">
           <div class="comics__info">
             <h1 class="comics__text-header">{{comicsInfo.title}}</h1>
-            {{comicsInfo.description}}
+            <div v-if="comicsInfo.description === ''">no info</div>
+            <div v-if="comicsInfo.description != ''">{{comicsInfo.description}}</div>
+            
             <hr />Heroes in this comics:
             <h6
               class="comics__heroes on"
               v-for="item of comicsInfo.characters.items"
               :key="item"
-              @click="HeroInfo(item.resourceURI)"
+              
             >
               <router-link
                 :to="{name: 'heroinfo', params:{id:  item.resourceURI.substring(item.resourceURI.lastIndexOf('/') + 1)}}"

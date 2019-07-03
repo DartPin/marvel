@@ -19,6 +19,16 @@
         </Router-link>
       </div>
     </div>
+    <div class="page-menu">
+        <div
+          class="btn btn-primary btn-page"
+          @click="showHeroes('prev')"
+        >prev</div>
+        <div
+          class="btn btn-primary btn-page"
+          @click="showHeroes('next')"
+        >next</div>
+      </div>
   </div>
 </template>
 

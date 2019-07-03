@@ -3,7 +3,8 @@
     <div class="backgr"></div>
     <div class="NA-info" v-if="comics.length===0">
       <div class="NA__container">
-        <div class="NA__Header">Sorry!!!</div>Unfortunately, we were unable to obtain information from "developer.marvel.com". But you can get acquainted with several popular characters. Let's not waste time !!!
+        <div class="NA__Header">Sorry!!!</div>
+        <div>Unfortunately, we were unable to obtain information from "developer.marvel.com". But you can get acquainted with several popular characters. Let's not waste time !!!</div>
         <div class="NA__footer" @click="showNAPage()">let's try!!!</div>
       </div>
     </div>
@@ -24,7 +25,11 @@
       <div class="page-menu">
         <div
           class="btn btn-primary btn-page"
-          @click="getComics(10)"
+          @click="showComics('prev')"
+        >prev</div>
+        <div
+          class="btn btn-primary btn-page"
+          @click="showComics('next')"
         >next</div>
       </div>
     </div>
